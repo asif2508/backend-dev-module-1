@@ -10,16 +10,20 @@ app.use(express.json());
 // get,post,delete, update
 
 app.get("/", (req, res) => {
-  res.json({
-    data: [
-      {
-        id: 1,
-        img: "my image",
-        name: "my name",
-      },
-    ],
-  });
-});
+  res.send("This is get request");
+})
+
+app.post('/', (req, res)=>{
+  res.send("This is post request")
+})
+
+app.delete('/', (req, res)=>{
+  res.send("This is delete request")
+})
+
+app.patch('/', (req, res)=>{
+  res.send("This is update request")
+})
 
 app.listen(5000, () => {
   console.log("server is running on port 5000");
